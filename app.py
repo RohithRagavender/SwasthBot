@@ -1,8 +1,8 @@
 import streamlit as st
-from rag.loader import load_and_split_docs
-from rag.embedder import embed_docs
-from rag.retriever import get_relevant_docs
-from rag.llm_chain import build_chain
+from loader import load_and_split_docs
+from embedder import embed_docs
+from retriever import get_relevant_docs
+from llm_chain import build_chain
 import os
 
 os.makedirs("data/medical_guides", exist_ok=True)
