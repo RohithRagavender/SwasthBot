@@ -5,13 +5,12 @@ from rag.retriever import get_relevant_docs
 from rag.llm_chain import build_chain
 import os
 
+os.makedirs("data/medical_guides", exist_ok=True)
 st.title("🩺 SwasthBot.ai – Smart Medical Assistant")
 pdfs = st.file_uploader("📄 Upload Medical PDFs", type="pdf", accept_multiple_files=True)
 
 if pdfs:
     all_docs = []
-    os.makedirs("data/medical_guides", exist_ok=True)
-
     for pdf in pdfs:
         file_path = f"data/medical_guides/{pdf.name}"
         with open(file_path, "wb") as f:
